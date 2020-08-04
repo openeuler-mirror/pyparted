@@ -3,15 +3,14 @@
 Name:    pyparted
 Epoch:   1
 Version: 3.11.6
-Release: 1
+Release: 2
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
-URL:     https://github.com/rhinstaller/pyparted
-
+URL:     https://github.com/dcantrell/pyparted
 Source0: https://github.com/dcantrell/pyparted/releases/download/v%{version}/%{name}-%{version}.tar.gz
-BuildRequires: gcc git pkgconfig e2fsprogs parted-devel >= 3.2-18
 
+BuildRequires: gcc git pkgconfig e2fsprogs parted-devel >= 3.2-18
 BuildRequires: python3-devel python3-six
 
 %description
@@ -55,6 +54,9 @@ popd
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Tue Aug 04 2020 Leo Fang <leofang_94@163.com> - 3.11.6-2
+- Update URL of pyparted
+
 * Fri Jul 24 2020 shixuantong <shixuantong@huawei.com> - 3.11.6-1
 - update to 3.11.6-1
 
