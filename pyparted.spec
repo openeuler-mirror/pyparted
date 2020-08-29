@@ -1,9 +1,9 @@
-%global debug_package   %{nil}
+%global debug_package %{nil}
 
 Name:    pyparted
 Epoch:   1
-Version: 3.11.2
-Release: 2
+Version: 3.11.4
+Release: 1
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
@@ -77,6 +77,9 @@ popd
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Sat Aug 29 2020 SimpleUpdate Robot <tc@openeuler.org> - 3.11.4-1
+- Upgrade to version 3.11.4
+
 * Mon Aug 03 2020 Leo Fang <leofang_94@163.com> - 3.11.2-2
 - Update url of Source0 and add yaml file
 
