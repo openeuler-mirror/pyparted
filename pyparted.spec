@@ -2,8 +2,8 @@
 
 Name:    pyparted
 Epoch:   1
-Version: 3.11.6
-Release: 2
+Version: 3.11.7
+Release: 1
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
@@ -54,6 +54,9 @@ popd
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Tue Feb 02 2021 wuchaochao <wuchaochao4@huawei.com> - 3.11.7-1
+- Update package version 
+
 * Tue Aug 04 2020 Leo Fang <leofang_94@163.com> - 3.11.6-2
 - Update URL of pyparted
 
