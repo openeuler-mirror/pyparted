@@ -3,7 +3,7 @@
 Name:    pyparted
 Epoch:   1
 Version: 3.11.7
-Release: 1
+Release: 2
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
@@ -33,7 +33,7 @@ cp -a . %{py3dir}
 
 %build
 pushd %{py3dir}
-PYTHON=python3 %make_build
+PYTHON=python3 %make_build CFLAGS="$RPM_OPT_FLAGS -s"
 popd
 
 %check
@@ -54,6 +54,9 @@ popd
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Sat Mar 20 2021 shixuantong <shixuantong@huawei> - 3.11.7-2
+- strip binary files
+
 * Tue Feb 02 2021 wuchaochao <wuchaochao4@huawei.com> - 3.11.7-1
 - Update package version 
 
