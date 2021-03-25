@@ -1,9 +1,7 @@
-%global debug_package   %{nil}
-
 Name:    pyparted
 Epoch:   1
 Version: 3.11.7
-Release: 2
+Release: 3
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
@@ -27,24 +25,14 @@ Python3 module for libparted.
 %prep
 %autosetup -n %{name}-%{version} -p1 -Sgit
 
-rm -rf %{py3dir}
-mkdir -p %{py3dir}
-cp -a . %{py3dir}
-
 %build
-pushd %{py3dir}
-PYTHON=python3 %make_build CFLAGS="$RPM_OPT_FLAGS -s"
-popd
+PYTHON=python3 %make_build CFLAGS="$RPM_OPT_FLAGS"
 
 %check
-pushd %{py3dir}
 PYTHON=python3 make test
-popd
 
 %install
-pushd %{py3dir}
 PYTHON=python3 %make_install
-popd
 
 %files -n python3-pyparted
 %doc AUTHORS NEWS README TODO
@@ -54,6 +42,9 @@ popd
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Wed Mar 03 2021 shixuantong <shixuantong@huawei.com> - 3.11.7-3
+- add debuginfo and debugsource
+
 * Sat Mar 20 2021 shixuantong <shixuantong@huawei> - 3.11.7-2
 - strip binary files
 
