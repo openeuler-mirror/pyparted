@@ -1,14 +1,14 @@
 Name:    pyparted
 Epoch:   1
 Version: 3.11.7
-Release: 2
+Release: 3
 Summary: Python bindings for libparted
 License: GPLv2
 Group:   System Environment/Libraries
 URL:     https://github.com/dcantrell/pyparted
 Source0: https://github.com/dcantrell/pyparted/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc git pkgconfig e2fsprogs parted-devel >= 3.2-18
+BuildRequires: gcc pkgconfig e2fsprogs parted-devel >= 3.2-18
 BuildRequires: python3-devel python3-six
 
 %description
@@ -23,7 +23,7 @@ Summary: Python3 bindings for libparted
 Python3 module for libparted.
 
 %prep
-%autosetup -n %{name}-%{version} -p1 -Sgit
+%autosetup -n %{name}-%{version} -p1
 
 %build
 PYTHON=python3 %make_build CFLAGS="$RPM_OPT_FLAGS"
@@ -42,6 +42,9 @@ PYTHON=python3 %make_install
 %{python3_sitearch}/%{name}-%{version}-*.egg-info
 
 %changelog
+* Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 3.11.7-3
+- DESC: delete -Sgit from %autosetup, and delete BuildRequires git
+
 * Wed Mar 03 2021 shixuantong <shixuantong@huawei.com> - 3.11.7-2
 - add debuginfo and debugsource
 
